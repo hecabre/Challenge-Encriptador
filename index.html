@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="styles.css" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Inter:wght@300;500&display=swap"
+      rel="stylesheet"
+    />
+    <script
+      src="https://kit.fontawesome.com/ad7738c81d.js"
+      crossorigin="anonymous"
+    ></script>
+    <title>Encriptador</title>
+  </head>
+  <body>
+    <main>
+      <section class="logo">
+        <img src="./static/Logo-1.webp" alt="logo" />
+      </section>
+      <section class="content">
+        <div>
+          <h1>Encriptador de texto</h1>
+          <textarea
+            name="text"
+            id="text-encrypt"
+            spellcheck="false"
+            required
+          ></textarea>
+        </div>
+        <div class="buttons">
+          <button class="encrypt" onclick="writeMessage()">
+            <span>Encriptar</span>
+          </button>
+          <ul class="social-media">
+            <li>
+              <a
+                href="https://www.linkedin.com/in/hernandez-cabrera-aaron-b13198271/"
+                target="_blank"
+                ><i class="fa-brands fa-linkedin"></i
+              ></a>
+            </li>
+            <li>
+              <a href="https://github.com/hecabre" target="_blank"
+                ><i class="fa-brands fa-github"></i
+              ></a>
+            </li>
+          </ul>
+          <button class="decrypt" onclick="deEncrypt()">
+            <span>Descencriptar</span>
+          </button>
+        </div>
+      </section>
+      <section class="messages" id="messages">
+        <img src="./static/Muñeco.webp" alt="toy" class="content-message" />
+        <h2 class="message-header">Ningun mensaje fue encontrado</h2>
+        <p class="content-message">
+          Ingresa el texto que deseas encriptar o desencriptar
+        </p>
+      </section>
+    </main>
+    <script src="./main.js"></script>
+  </body>
+</html>
