@@ -5,8 +5,8 @@ const writeMessage = () => {
     cleanMessages(".content-message"),
       changeTitleEncrypt(),
       cleanMessages(".deEncrypted");
-    let n = document.createElement("p");
-    (n.textContent = e), (n.className = "encrypted"), t.appendChild(n);
+    let a = document.createElement("p");
+    (a.textContent = e), (a.className = "encrypted"), t.appendChild(a);
   },
   changeTitleEncrypt = () => {
     document.getElementsByClassName(
@@ -21,9 +21,9 @@ const writeMessage = () => {
   encrypt = () => {
     let e = document.getElementById("text-encrypt").value,
       t = "";
-    for (let n = 0; n < e.length; n++) {
-      let a = e[n];
-      switch (a) {
+    for (let a = 0; a < e.length; a++) {
+      let n = e[a];
+      switch (n) {
         case "a":
           t += "ai";
           break;
@@ -40,24 +40,22 @@ const writeMessage = () => {
           t += "ufat";
           break;
         default:
-          t += a;
+          t += n;
       }
     }
     return (counter += 1), t.replace(/\s+/g, "");
   },
   deEncrypt = () => {
-    debugger;
     let e = document.getElementById("messages"),
       t = { ai: "a", enter: "e", imes: "i", ober: "o", ufat: "u" },
-      n = "",
-      a = document.getElementsByClassName("encrypted");
-    for (let s = 0; s < a.length; s++) {
-      let r = a[s].textContent,
-        l = RegExp(Object.keys(t).join("|"), "g");
-        a[s].textContent = l
-      n += r.replace(l, (e) => t[e]);
+      a = "",
+      n = document.getElementsByClassName("encrypted");
+    for (let s = 0; s < n.length; s++) {
+      let l = n[s].textContent,
+        r = RegExp(Object.keys(t).join("|"), "g");
+      (n[s].textContent = r), (a += l.replace(r, (e) => t[e]));
     }
     cleanMessages(".encrypted");
-    let o = document.createElement("p");
-    (o.textContent = n), e.appendChild(o), (o.className = "deEncrypted");
+    let c = document.createElement("p");
+    (c.textContent = a), e.appendChild(c), (c.className = "deEncrypted");
   };
