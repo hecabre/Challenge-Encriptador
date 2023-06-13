@@ -39,11 +39,14 @@ const writeMessage = () => {
         case "u":
           t += "ufat";
           break;
+        case " ":
+          t += " ";
+          break;
         default:
           t += n;
       }
     }
-    return (counter += 1), t.replace(/\s+/g, "");
+    return (counter += 1), t;
   },
   deEncrypt = () => {
     let e = document.getElementById("messages"),
@@ -53,9 +56,10 @@ const writeMessage = () => {
     for (let s = 0; s < n.length; s++) {
       let l = n[s].textContent,
         r = RegExp(Object.keys(t).join("|"), "g");
-      (n[s].textContent = r), (a += l.replace(r, (e) => t[e]));
+      (n[s].textContent = l.replace(r, (e) => t[e])),
+        (a = l.replace(r, (e) => t[e]));
+      let c = document.createElement("p");
+      (c.textContent = a), e.appendChild(c), (c.className = "deEncrypted");
     }
     cleanMessages(".encrypted");
-    let c = document.createElement("p");
-    (c.textContent = a), e.appendChild(c), (c.className = "deEncrypted");
   };
